@@ -9,7 +9,7 @@ Welcome to my GitHub! I develop advanced tools for **crypto trading automation**
 ### 🤖 **Trading Bots & Automation**
 | **Project**               | **Description**                                                                        | **Repo** |
 |---------------------------|----------------------------------------------------------------------------------------|----------|
-| CatWifTools        | Solana Bundler launcher w wallet manager (GUI INCLUDED)                                       | [Repo](catwiftools) |
+| CatWifTools        | Solana Bundler launcher w wallet manager (GUI INCLUDED)                                       | [Repo]([catwiftools](https://github.com/theo-bggtt/catwiftools)) |
 | Pump & Dump Tracker       | Analyzes and tracks wallets of PumpFun scammers, to snipe them before their calls      | [Repo](#) |
 | Telegram Trading Bot      | Automates token purchase from Telegram groups                                          | [Repo](#) |
 
