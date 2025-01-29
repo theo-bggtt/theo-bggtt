@@ -10,15 +10,15 @@ Welcome to my GitHub! I develop advanced tools for **crypto trading automation**
 | **Project**               | **Description**                                                                        | **Repo** |
 |---------------------------|----------------------------------------------------------------------------------------|----------|
 | CatWifTools        | Solana Bundler launcher w wallet manager (GUI INCLUDED)                                       | [Repo](https://github.com/theo-bggtt/catwiftools) |
-| Pump & Dump Tracker       | Analyzes and tracks wallets of PumpFun scammers, to snipe them before their calls      | [Repo](#) |
-| Telegram Trading Bot      | Automates token purchase from Telegram groups                                          | [Repo](#) |
+| Pump & Dump Tracker       | Analyzes and tracks wallets of PumpFun scammers, to snipe them before their calls      | [Comming soon](#) |
+| Telegram Trading Bot      | Automates token purchase from Telegram groups                                          | [Comming soon](#) |
 
 ### 💰 **Analysis & Monitoring**
 | **Project**                 | **Description**                                      | **Repo** |
 |---------------------------|------------------------------------------------------|----------|
-| Wallet Tracker            | Real-time transaction monitoring on Solana         | [Repo](#) |
-| Token Holder Analyzer     | Extracts and compares token holders                | [Repo](#) |
-| Solana Balance Fetcher    | Automated wallet balance retrieval                 | [Repo](#) |
+| Wallet Tracker            | Real-time transaction monitoring on Solana         | [Comming soon](#) |
+| Token Holder Analyzer     | Extracts and compares token holders                | [Comming soon](#) |
+| Solana Balance Fetcher    | Automated wallet balance retrieval                 | [Comming soon](#) |
 
 ---
 
