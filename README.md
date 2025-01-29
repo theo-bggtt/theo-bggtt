@@ -38,7 +38,7 @@ I'm always open to discussions and collaborations around **crypto trading, autom
 
 📫 **Reach out to me:**
 - **Discord:** [@water.1213](#)
-- **Telegram:** [t.me/water_ccam](#)
+- **Telegram:** [https://t.me/water_ccam](#)
 
 ---
 
