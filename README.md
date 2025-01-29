@@ -1,6 +1,6 @@
 # 🚀 **Blockchain & Trading Automation Enthusiast**
 
-Welcome to my GitHub! I develop advanced tools for **crypto trading automation** and transaction analysis on the Solana blockchain. My work focuses on creating trading bots, wallet tracking systems, and tools to maximize trading strategy efficiency.
+Welcome to my GitHub! I develop tools for **crypto trading automation** and transaction analysis on Solana. My work focuses on creating trading bots, wallet tracking systems, and tools to maximize trading efficiency. I will also be adding multiple small tools unrelated to solana development, which are personnal projectss
 
 ---
 
