@@ -10,12 +10,12 @@
 
 </div>
 
-## ☕ about me
+<!--## ☕ about me
 
 - 🎓 software dev student, currently deep in NoSQL land: MongoDB ⇄ ArangoDB graph pipelines in C# / .NET 8
 - 🏠 wiring the whole house with ESP32-C3 boards and mmWave radar so the lights know I exist
 - 🖨️ 3D printing for about a decade now: if it can be printed, it will be printed
-- 🌱 I like cozy interfaces, tiny boards and code that quietly does its job
+- 🌱 I like cozy interfaces, tiny boards and code that quietly does its job -->
 
 ## 🧰 toolbox
 
