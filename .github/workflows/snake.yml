@@ -1,0 +1,49 @@
+# ─────────────────────────────────────────────────────────────────────
+#  🐍 snake animation generator
+#  put this file at:  .github/workflows/snake.yml
+#  in the same repo as the profile README (YOUR_USERNAME/YOUR_USERNAME)
+#
+#  it regenerates the animation every night, on every push,
+#  and whenever you trigger it manually from the Actions tab.
+#  the SVGs land on an "output" branch that the README points to.
+# ─────────────────────────────────────────────────────────────────────
+
+name: generate snake
+
+on:
+  schedule:
+    - cron: "18 23 * * *"   # every night at 03:00 UTC
+  workflow_dispatch:       # manual run from the Actions tab
+  push:
+    branches:
+      - main
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  snake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # two flavors: light (Catppuccin Latte) and dark (Catppuccin Mocha)
+      # dots go from "no contributions" to "lots", snake is peach 🍑
+      - name: generate the svg files
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg?color_snake=#fe640b&color_dots=#e6e9ef,#ccd0da,#bcc0cc,#8839ef,#fe640b
+            dist/github-snake-dark.svg?palette=github-dark&color_snake=#fab387&color_dots=#313244,#45475a,#585b70,#cba6f7,#fab387
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # publish the generated files to the "output" branch
+      - name: push to the output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
