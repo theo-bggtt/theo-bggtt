@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 200" width="860" height="200" role="img" aria-label="a 3D printer laying down layers on loop">
+  <style>
+    svg { --ln:#9ca0b0; --frame:#7c7f93; --acc:#FE640B; --acc2:#8839EF; --cool:#179299; --txt:#6c6f85; }
+    @media (prefers-color-scheme: dark) {
+      svg { --ln:#45475a; --frame:#6c7086; --acc:#FAB387; --acc2:#CBA6F7; --cool:#94E2D5; --txt:#a6adc8; }
+    }
+    .fr   { stroke:var(--frame); stroke-width:2.5; fill:none; stroke-linecap:round; }
+    .bed  { stroke:var(--frame); stroke-width:4; stroke-linecap:round; }
+    .rail { stroke:var(--ln); stroke-width:2; stroke-linecap:round; }
+    .fil  { stroke:var(--cool); stroke-width:1.6; fill:none; stroke-dasharray:5 6; opacity:.7;
+            animation: feed 1.2s linear infinite; }
+    @keyframes feed { to { stroke-dashoffset:-22; } }
+    .rise { animation: rise 12s steps(14,end) infinite; }
+    @keyframes rise { 0% {transform:translateY(0)} 75%,100% {transform:translateY(-112px)} }
+    .head { animation: sweep 1.5s ease-in-out infinite alternate; }
+    @keyframes sweep { from {transform:translateX(0)} to {transform:translateX(126px)} }
+    .nozzle { fill:var(--acc); }
+    .block  { fill:none; stroke:var(--frame); stroke-width:2; }
+    .layer  { fill:var(--acc2); opacity:.75; }
+    .layer:nth-of-type(odd) { fill:var(--acc); opacity:.6; }
+    .spool  { stroke:var(--cool); stroke-width:2.5; fill:none; }
+    .spool.dash { stroke-dasharray:10 12; opacity:.6; }
+    .tag { font-family:ui-monospace,SFMono-Regular,"JetBrains Mono",Menlo,monospace;
+           font-size:11px; fill:var(--txt); opacity:.55; }
+    .done { fill:none; stroke:var(--acc); stroke-width:2; opacity:0;
+            animation: done 12s ease-out infinite; }
+    @keyframes done { 0%,74% {opacity:0} 78% {opacity:.9} 88%,100% {opacity:0} }
+  </style>
+
+  <defs>
+    <clipPath id="rev" clipPathUnits="userSpaceOnUse">
+      <rect class="rise" x="364" y="160" width="132" height="140" />
+    </clipPath>
+  </defs>
+
+  <!-- filament spool -->
+  <g>
+    <circle class="spool" cx="140" cy="104" r="34" />
+    <circle class="spool dash" cx="140" cy="104" r="24">
+      <animateTransform attributeName="transform" type="rotate" from="0 140 104" to="-360 140 104" dur="7s" repeatCount="indefinite" />
+    </circle>
+    <circle class="spool" cx="140" cy="104" r="6" />
+    <path class="fil" d="M172 96 C 240 60, 250 40, 300 34 H 430" />
+    <text class="tag" x="140" y="164" text-anchor="middle">petg · 0.2mm</text>
+  </g>
+
+  <!-- printer frame -->
+  <path class="fr" d="M292 172 V32 M568 172 V32 M285 32 H575" />
+  <path class="bed" d="M300 162 H560" />
+
+  <!-- the print, revealed layer by layer -->
+  <g clip-path="url(#rev)">
+    <rect class="layer" x="370" y="152" width="120" height="8" rx="2" />
+    <rect class="layer" x="370" y="144" width="120" height="8" rx="2" />
+    <rect class="layer" x="372" y="136" width="116" height="8" rx="2" />
+    <rect class="layer" x="376" y="128" width="108" height="8" rx="2" />
+    <rect class="layer" x="382" y="120" width="96"  height="8" rx="2" />
+    <rect class="layer" x="388" y="112" width="84"  height="8" rx="2" />
+    <rect class="layer" x="392" y="104" width="76"  height="8" rx="2" />
+    <rect class="layer" x="392" y="96"  width="76"  height="8" rx="2" />
+    <rect class="layer" x="388" y="88"  width="84"  height="8" rx="2" />
+    <rect class="layer" x="382" y="80"  width="96"  height="8" rx="2" />
+    <rect class="layer" x="376" y="72"  width="108" height="8" rx="2" />
+    <rect class="layer" x="372" y="64"  width="116" height="8" rx="2" />
+    <rect class="layer" x="370" y="56"  width="120" height="8" rx="2" />
+    <rect class="layer" x="370" y="48"  width="120" height="8" rx="2" />
+  </g>
+  <rect class="done" x="366" y="44" width="128" height="120" rx="6" />
+
+  <!-- gantry + hotend -->
+  <g class="rise">
+    <path class="rail" d="M294 156 H566" />
+    <g class="head">
+      <rect class="block" x="360" y="142" width="24" height="14" rx="3" />
+      <path class="nozzle" d="M368 156 h8 l-4 7 z" />
+    </g>
+  </g>
+
+  <text class="tag" x="600" y="168">orca &#8594; klipper</text>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 200" width="860" height="200" role="img" aria-label="a graph traversal lighting up node by node">
+  <style>
+    svg { --ln:#9ca0b0; --node:#7c7f93; --acc:#1E66F5; --acc2:#8839EF; --hot:#FE640B; --txt:#6c6f85; }
+    @media (prefers-color-scheme: dark) {
+      svg { --ln:#45475a; --node:#6c7086; --acc:#89B4FA; --acc2:#CBA6F7; --hot:#FAB387; --txt:#a6adc8; }
+    }
+    .edge { stroke:var(--ln); stroke-width:1.8; fill:none; stroke-dasharray:4 7;
+            animation: drift 2.4s linear infinite; }
+    @keyframes drift { to { stroke-dashoffset:-22; } }
+    .node { fill:var(--node); opacity:.62; }
+    .halo { fill:none; stroke:var(--acc2); stroke-width:2; opacity:0;
+            animation: ping 6s ease-out infinite; }
+    .core { fill:var(--acc2); opacity:0; animation: ping 6s ease-out infinite; }
+    @keyframes ping { 0% {opacity:0} 3% {opacity:.9} 16% {opacity:.15} 100% {opacity:0} }
+    .pk1 { fill:var(--acc); }
+    .pk2 { fill:var(--hot); }
+    .cap { font-family:ui-monospace,SFMono-Regular,"JetBrains Mono",Menlo,monospace;
+           font-size:11px; fill:var(--txt); opacity:.55; }
+  </style>
+
+  <g class="edge">
+    <path d="M90 100 L210 52" /><path d="M90 100 L210 150" />
+    <path d="M210 52 L340 100" /><path d="M210 150 L340 100" />
+    <path d="M340 100 L470 48" /><path d="M340 100 L470 152" />
+    <path d="M470 48 L600 100" /><path d="M470 152 L600 100" />
+    <path d="M600 100 L730 64" /><path d="M600 100 L730 140" />
+    <path d="M210 52 L210 150" /><path d="M470 48 L470 152" />
+  </g>
+
+  <g>
+    <circle class="node" cx="90"  cy="100" r="7" /><circle class="halo" cx="90"  cy="100" r="13" style="animation-delay:0s"    /><circle class="core" cx="90"  cy="100" r="7" style="animation-delay:0s"    />
+    <circle class="node" cx="210" cy="52"  r="7" /><circle class="halo" cx="210" cy="52"  r="13" style="animation-delay:1.14s" /><circle class="core" cx="210" cy="52"  r="7" style="animation-delay:1.14s" />
+    <circle class="node" cx="210" cy="150" r="7" /><circle class="halo" cx="210" cy="150" r="13" style="animation-delay:1.7s"  /><circle class="core" cx="210" cy="150" r="7" style="animation-delay:1.7s"  />
+    <circle class="node" cx="340" cy="100" r="8" /><circle class="halo" cx="340" cy="100" r="14" style="animation-delay:2.36s" /><circle class="core" cx="340" cy="100" r="8" style="animation-delay:2.36s" />
+    <circle class="node" cx="470" cy="48"  r="7" /><circle class="halo" cx="470" cy="48"  r="13" style="animation-delay:4.2s"  /><circle class="core" cx="470" cy="48"  r="7" style="animation-delay:4.2s"  />
+    <circle class="node" cx="470" cy="152" r="7" /><circle class="halo" cx="470" cy="152" r="13" style="animation-delay:3.6s"  /><circle class="core" cx="470" cy="152" r="7" style="animation-delay:3.6s"  />
+    <circle class="node" cx="600" cy="100" r="8" /><circle class="halo" cx="600" cy="100" r="14" style="animation-delay:4.83s" /><circle class="core" cx="600" cy="100" r="8" style="animation-delay:4.83s" />
+    <circle class="node" cx="730" cy="64"  r="7" /><circle class="halo" cx="730" cy="64"  r="13" style="animation-delay:5.9s"  /><circle class="core" cx="730" cy="64"  r="7" style="animation-delay:5.9s"  />
+    <circle class="node" cx="730" cy="140" r="7" /><circle class="halo" cx="730" cy="140" r="13" style="animation-delay:5.5s"  /><circle class="core" cx="730" cy="140" r="7" style="animation-delay:5.5s"  />
+  </g>
+
+  <circle class="pk1" r="4.5">
+    <animateMotion dur="6s" repeatCount="indefinite" path="M90 100 L210 52 L340 100 L470 152 L600 100 L730 64" />
+  </circle>
+  <circle class="pk2" r="4.5">
+    <animateMotion dur="6s" begin="0.6s" repeatCount="indefinite" path="M90 100 L210 150 L340 100 L470 48 L600 100 L730 140" />
+  </circle>
+
+  <text class="cap" x="90" y="190">FOR v, e, p IN 1..3 OUTBOUND "rooms/kitchen" GRAPH "house"</text>
+</svg>
