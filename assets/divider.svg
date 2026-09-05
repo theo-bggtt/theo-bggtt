@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 18" width="860" height="18" role="img" aria-label="divider">
+  <style>
+    svg { --ln:#9ca0b0; --a:#FE640B; --b:#8839EF; --c:#179299; }
+    @media (prefers-color-scheme: dark) { svg { --ln:#45475a; --a:#FAB387; --b:#CBA6F7; --c:#94E2D5; } }
+    .d1{fill:var(--a)} .d2{fill:var(--b)} .d3{fill:var(--c)}
+    .rule { stroke:var(--ln); stroke-width:1.5; stroke-dasharray:3 8; opacity:.55;
+            animation: slide 2.6s linear infinite; }
+    @keyframes slide { to { stroke-dashoffset:-22; } }
+  </style>
+  <path class="rule" d="M10 9 H850" />
+  <circle class="d1" r="3.5">
+    <animateMotion dur="5.5s" repeatCount="indefinite" path="M10 9 H850" />
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.06;.9;1" dur="5.5s" repeatCount="indefinite" />
+  </circle>
+  <circle class="d2" r="2.5">
+    <animateMotion dur="7s" begin="1.4s" repeatCount="indefinite" path="M10 9 H850" />
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.06;.9;1" dur="7s" begin="1.4s" repeatCount="indefinite" />
+  </circle>
+  <circle class="d3" r="2">
+    <animateMotion dur="9s" begin="3.2s" repeatCount="indefinite" path="M10 9 H850" />
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.06;.9;1" dur="9s" begin="3.2s" repeatCount="indefinite" />
+  </circle>
+</svg>

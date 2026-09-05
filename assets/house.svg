@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 190" width="860" height="190" role="img" aria-label="a dot walks home and the house wakes up">
+  <style>
+    svg { --ln:#9ca0b0; --dim:#8c8fa1; --acc:#FE640B; --acc2:#8839EF; --warm:#DF8E1D; --txt:#6c6f85; }
+    @media (prefers-color-scheme: dark) {
+      svg { --ln:#585b70; --dim:#6c7086; --acc:#FAB387; --acc2:#CBA6F7; --warm:#F9E2AF; --txt:#a6adc8; }
+    }
+    .ground { stroke:var(--ln); stroke-width:1.5; stroke-dasharray:6 10; fill:none; opacity:.6;
+              animation: flow 3s linear infinite; }
+    @keyframes flow { to { stroke-dashoffset:-32; } }
+    .frame { stroke:var(--ln); stroke-width:2; fill:none; stroke-linejoin:round; stroke-linecap:round; }
+    .roof  { stroke:var(--acc); stroke-width:2.5; fill:none; stroke-linejoin:round; stroke-linecap:round; }
+    .pane  { fill:var(--dim); opacity:.18; }
+    .lit   { fill:var(--warm); opacity:0; animation: lite 9s ease-out infinite; }
+    .lit.b { animation-delay:.16s; }
+    .lit.c { animation-delay:.32s; }
+    @keyframes lite { 0%,57% {opacity:0} 63% {opacity:.95} 86% {opacity:.85} 95%,100% {opacity:0} }
+    .ring  { fill:none; stroke:var(--acc2); stroke-width:1.5; }
+    .walk  { animation: walk 9s cubic-bezier(.4,0,.6,1) infinite; }
+    @keyframes walk {
+      0%   { transform:translateX(0);     opacity:0 }
+      5%   { transform:translateX(24px);  opacity:1 }
+      58%  { transform:translateX(548px); opacity:1 }
+      65%  { transform:translateX(578px); opacity:0 }
+      100% { transform:translateX(578px); opacity:0 }
+    }
+    .bob   { animation: bob .55s ease-in-out infinite alternate; }
+    @keyframes bob { from {transform:translateY(0)} to {transform:translateY(-4px)} }
+    .dot   { fill:var(--acc); }
+    .trail { fill:var(--acc); opacity:.25; }
+    .code  { font-family:ui-monospace,SFMono-Regular,"JetBrains Mono",Menlo,monospace; font-size:13px; fill:var(--txt); }
+    .code.on { opacity:0; animation: say 9s ease-out infinite; }
+    @keyframes say { 0%,58% {opacity:0} 64%,88% {opacity:.9} 96%,100% {opacity:0} }
+    .lamp { stroke:var(--ln); stroke-width:2; fill:none; stroke-linecap:round; }
+    .bulb { fill:var(--warm); opacity:0; }
+    .cone { fill:var(--warm); opacity:0; }
+    .l1 .bulb { animation: b1 9s ease-out infinite; } .l1 .cone { animation: c1 9s ease-out infinite; }
+    .l2 .bulb { animation: b2 9s ease-out infinite; } .l2 .cone { animation: c2 9s ease-out infinite; }
+    @keyframes b1 { 0%,20% {opacity:0} 24% {opacity:1} 88% {opacity:.9} 95%,100% {opacity:0} }
+    @keyframes c1 { 0%,20% {opacity:0} 26% {opacity:.14} 88% {opacity:.11} 95%,100% {opacity:0} }
+    @keyframes b2 { 0%,37% {opacity:0} 41% {opacity:1} 88% {opacity:.9} 95%,100% {opacity:0} }
+    @keyframes c2 { 0%,37% {opacity:0} 43% {opacity:.14} 88% {opacity:.11} 95%,100% {opacity:0} }
+    .tag { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; fill:var(--txt); opacity:.55; }
+  </style>
+
+  <!-- ground -->
+  <path class="ground" d="M30 152 H830" />
+
+  <!-- radar sweeps out of the house -->
+  <g>
+    <circle class="ring" cx="694" cy="104" r="12">
+      <animate attributeName="r" values="12;150" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values=".5;0" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle class="ring" cx="694" cy="104" r="12">
+      <animate attributeName="r" values="12;150" dur="3s" begin="1s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values=".5;0" dur="3s" begin="1s" repeatCount="indefinite" />
+    </circle>
+    <circle class="ring" cx="694" cy="104" r="12">
+      <animate attributeName="r" values="12;150" dur="3s" begin="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values=".5;0" dur="3s" begin="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- street lamps -->
+  <g>
+    <g class="l1">
+      <path class="lamp" d="M250 152 V78 h18" />
+      <path class="cone" d="M268 86 L245 152 H291 Z" />
+      <circle class="bulb" cx="268" cy="82" r="5" />
+    </g>
+    <g class="l2">
+      <path class="lamp" d="M450 152 V78 h18" />
+      <path class="cone" d="M468 86 L445 152 H491 Z" />
+      <circle class="bulb" cx="468" cy="82" r="5" />
+    </g>
+  </g>
+
+  <!-- house -->
+  <g>
+    <path class="frame" d="M640 100 V152 H750 V100" />
+    <path class="roof"  d="M628 102 L695 56 L762 102" />
+    <rect class="frame" x="686" y="122" width="20" height="30" rx="2" />
+    <rect class="pane" x="652" y="110" width="20" height="15" rx="2" />
+    <rect class="pane" x="716" y="110" width="20" height="15" rx="2" />
+    <circle class="pane" cx="695" cy="82" r="8" />
+    <rect class="lit a" x="652" y="110" width="20" height="15" rx="2" />
+    <rect class="lit b" x="716" y="110" width="20" height="15" rx="2" />
+    <circle class="lit c" cx="695" cy="82" r="8" />
+    <text class="tag" x="695" y="176" text-anchor="middle">esp32-c3 · mmwave</text>
+  </g>
+
+  <!-- the human, allegedly -->
+  <g class="walk">
+    <circle class="trail" cx="34" cy="140" r="4" />
+    <circle class="trail" cx="46" cy="140" r="5" />
+    <g class="bob">
+      <circle class="dot" cx="60" cy="139" r="7" />
+    </g>
+  </g>
+
+  <text class="code on" x="30" y="36">theo.presence === true &#8594; lights.on()</text>
+</svg>
